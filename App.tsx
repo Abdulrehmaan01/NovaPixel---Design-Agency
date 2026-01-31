@@ -63,7 +63,6 @@ const Header = () => (
 
 const Hero = () => (
   <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center text-center overflow-hidden">
-    {/* Animated Background Elements */}
     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
       {[...Array(20)].map((_, i) => (
         <motion.div
@@ -83,11 +82,12 @@ const Hero = () => (
       ))}
     </div>
 
-    <div className="container mx-auto px-6 relative z-10 py-20">
+    <div className="container mx-auto px-6 relative z-10 py-20 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
+        className="flex flex-col items-center"
       >
         <div className="inline-block glass px-4 py-1.5 rounded-full border border-[#39FF14]/30 mb-8">
             <span className="text-[#39FF14] font-orbitron text-[10px] md:text-xs tracking-[0.3em] font-bold">PREMIUM WEB DESIGN SOLUTIONS</span>
@@ -101,7 +101,7 @@ const Hero = () => (
           <span className="text-white font-semibold"> One-time cost 💵. No monthly contracts 🚫.</span>
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16 w-full max-w-2xl">
           <a href="https://wa.me/1234567890" className="w-full sm:w-auto bg-[#39FF14] text-black px-12 py-5 rounded-2xl font-bold text-lg shadow-[0_0_30px_rgba(57,255,20,0.5)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3">
             <MessageCircle size={24} fill="black" /> Message Us on WhatsApp
           </a>
@@ -179,13 +179,13 @@ const ProblemSection = () => (
 
 const SolutionSection = () => (
   <section className="py-32 bg-gradient-to-b from-[#0a0a0a] to-[#0d0d0d] relative overflow-hidden">
-    <div className="container mx-auto px-6 text-center relative z-10">
+    <div className="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
       <div className="max-w-3xl mx-auto mb-20">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 neon-text leading-tight">How We Help You <br/>Get More Leads 📈</h2>
         <p className="text-gray-400 text-lg leading-relaxed">We leverage high-end design and conversion optimization to turn clicks into clients.</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20 w-full">
         {[
           { num: "01", title: "Web3 Visual Style", desc: "A clean, modern, and futuristic design that builds instant brand authority.", icon: <Globe className="text-[#39FF14]" /> },
           { num: "02", title: "Conversion First", desc: "Strategic UI placement that guides every visitor toward the 'Lead' button.", icon: <CheckCircle className="text-[#39FF14]" /> },
@@ -290,7 +290,6 @@ const Pricing = () => (
       </div>
       
       <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-        {/* Standard */}
         <motion.div 
           whileHover={{ y: -10 }}
           className="glass p-12 rounded-[4rem] border border-white/5 relative flex flex-col items-center group"
@@ -313,7 +312,6 @@ const Pricing = () => (
           </a>
         </motion.div>
 
-        {/* Express */}
         <motion.div 
           whileHover={{ y: -10 }}
           className="glass p-12 rounded-[4rem] border-2 border-[#39FF14]/50 relative flex flex-col items-center bg-[#39FF14]/5 group shadow-[0_0_50px_rgba(57,255,20,0.05)]"
@@ -402,12 +400,10 @@ const HowItWorks = () => (
           { step: "04", title: "Site Launch 🚀", desc: "We build, refine, and launch your lead-generating website in 3–5 business days.", align: "right" },
         ].map((item, idx) => (
           <div key={idx} className={`relative flex flex-col md:flex-row items-start md:items-center mb-24 last:mb-0 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}>
-            {/* Step Number Circle */}
             <div className="absolute left-0 md:left-1/2 -translate-x-[40px] md:-translate-x-1/2 w-20 h-20 rounded-full glass border-2 border-[#39FF14] flex items-center justify-center font-orbitron text-3xl font-black text-[#39FF14] shadow-[0_0_30px_rgba(57,255,20,0.3)] z-10 bg-[#080808]">
               {item.step}
             </div>
             
-            {/* Content Card */}
             <motion.div 
               whileInView={{ x: item.align === 'left' ? [-30, 0] : [30, 0], opacity: [0, 1] }}
               viewport={{ once: true }}
@@ -417,7 +413,6 @@ const HowItWorks = () => (
               <p className="text-gray-400 leading-relaxed text-sm font-medium">{item.desc}</p>
             </motion.div>
             
-            {/* Spacer for MD screens */}
             <div className="hidden md:block w-[42%]"></div>
           </div>
         ))}
@@ -503,7 +498,7 @@ const FAQ = () => (
 const FinalCTA = () => (
   <section className="py-40 relative overflow-hidden bg-black text-center">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#39FF14]/10 via-transparent to-transparent"></div>
-    <div className="container mx-auto px-6 relative z-10">
+    <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
       <h2 className="text-5xl md:text-8xl font-black mb-12 neon-text tracking-tighter leading-[1] max-w-5xl mx-auto">
         Ready to Get More Leads from Your Website? 🚀
       </h2>
@@ -511,7 +506,7 @@ const FinalCTA = () => (
         Let us build a website that actually converts. Start your project today and see the transformation in just a few days.
       </p>
       
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+      <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full max-w-4xl">
         <a href="https://wa.me/1234567890" className="w-full md:w-auto bg-[#39FF14] text-black px-16 py-6 rounded-2xl font-black text-2xl shadow-[0_0_50px_rgba(57,255,20,0.6)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4">
           <MessageCircle size={32} fill="black" /> Message Us on WhatsApp
         </a>
